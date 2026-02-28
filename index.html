@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OpenClaw Consulting</title>
+  <title>Claw Consulting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -31,15 +31,11 @@
       line-height: 1.7;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-      color: var(--white);
-    }
-
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--white); }
     a { color: var(--gold); text-decoration: none; }
     a:hover { color: var(--gold-light); }
 
-    /* ─── NAV ─── */
+    /* NAV */
     nav {
       position: sticky;
       top: 0;
@@ -54,15 +50,29 @@
       border-bottom: 1px solid var(--border);
     }
 
+    .nav-logo-wrap {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
     .nav-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--white);
       letter-spacing: 0.5px;
     }
 
     .nav-logo span { color: var(--gold); }
+
+    .nav-sublabel {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
 
     .nav-links {
       display: flex;
@@ -100,7 +110,7 @@
       .nav-links { display: none; }
     }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero {
       min-height: 92vh;
       display: flex;
@@ -111,6 +121,7 @@
       overflow: hidden;
     }
 
+    /* Gold geometric emblem — top right corner decoration */
     .hero::before {
       content: '';
       position: absolute;
@@ -118,7 +129,15 @@
       right: -200px;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-emblem {
+      position: absolute;
+      top: 60px;
+      right: 60px;
+      opacity: 0.18;
       pointer-events: none;
     }
 
@@ -126,26 +145,44 @@
       max-width: 1100px;
       margin: 0 auto;
       width: 100%;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero-eyebrow {
+    .hero-brand-block {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--gold);
+      gap: 14px;
       margin-bottom: 28px;
     }
 
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
+    .hero-brand-line {
       width: 32px;
       height: 1px;
       background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .hero-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-brand-main {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-brand-sub {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     .hero h1 {
@@ -158,10 +195,7 @@
       margin-bottom: 28px;
     }
 
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
 
     .hero-sub {
       font-size: 1.1rem;
@@ -228,17 +262,14 @@
       font-weight: 500;
     }
 
-    /* ─── SECTION LAYOUT ─── */
+    /* SECTION */
     .section {
       padding: 100px 60px;
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-    }
+    .section-divider { border: none; border-top: 1px solid var(--border); }
 
     .section-label {
       font-size: 0.75rem;
@@ -260,7 +291,7 @@
       background: var(--gold);
     }
 
-    /* ─── WHY US ─── */
+    /* WHY US */
     .why-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -270,34 +301,17 @@
       margin-top: 56px;
     }
 
-    .why-cell {
-      background: var(--dark);
-      padding: 44px 40px;
-    }
+    .why-cell { background: var(--dark); padding: 44px 40px; }
 
-    .why-cell .icon {
-      font-size: 1.4rem;
-      margin-bottom: 16px;
-    }
+    .why-cell .icon { font-size: 1.4rem; margin-bottom: 16px; }
 
-    .why-cell h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--white);
-    }
+    .why-cell h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: var(--white); }
 
-    .why-cell p {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.8;
-    }
+    .why-cell p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
 
-    @media (max-width: 640px) {
-      .why-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
 
-    /* ─── PACKAGES ─── */
+    /* PACKAGES */
     .packages-bg {
       background: var(--dark);
       border-top: 1px solid var(--border);
@@ -334,11 +348,9 @@
       gap: 0;
       padding: 42px 0;
       transition: background 0.15s;
-      position: relative;
     }
 
     .package-row:last-of-type { border-bottom: 1px solid var(--border); }
-
     .package-row:hover { background: rgba(201,168,76,0.03); }
 
     .pkg-label {
@@ -358,25 +370,27 @@
       margin-bottom: 14px;
     }
 
-    .pkg-features {
-      list-style: none;
-      margin-top: 4px;
-    }
+    .pkg-features { list-style: none; margin-top: 4px; }
 
     .pkg-features li {
       font-size: 0.87rem;
       color: var(--muted);
       padding: 4px 0;
-      padding-left: 18px;
+      padding-left: 20px;
       position: relative;
     }
 
     .pkg-features li::before {
-      content: '—';
+      content: '';
       position: absolute;
       left: 0;
-      color: var(--gold);
-      font-size: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 5px;
+      border: 1px solid var(--gold);
+      transform: translateY(-50%) rotate(45deg);
+      opacity: 0.8;
     }
 
     .pkg-price-col {
@@ -394,11 +408,7 @@
       line-height: 1;
     }
 
-    .pkg-price-note {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 5px;
-    }
+    .pkg-price-note { font-size: 0.78rem; color: var(--muted); margin-top: 5px; }
 
     .pkg-action-col {
       display: flex;
@@ -420,20 +430,10 @@
       transition: all 0.2s;
     }
 
-    .btn-outline:hover {
-      background: var(--gold);
-      color: var(--black);
-    }
+    .btn-outline:hover { background: var(--gold); color: var(--black); }
 
-    .btn-outline.solid {
-      background: var(--gold);
-      color: var(--black);
-    }
-
-    .btn-outline.solid:hover {
-      background: var(--gold-light);
-      color: var(--black);
-    }
+    .btn-outline.solid { background: var(--gold); color: var(--black); }
+    .btn-outline.solid:hover { background: var(--gold-light); color: var(--black); }
 
     @media (max-width: 768px) {
       .package-row { grid-template-columns: 1fr; gap: 20px; }
@@ -441,7 +441,6 @@
       .pkg-action-col { justify-content: flex-start; }
     }
 
-    /* Cost note */
     .cost-note {
       margin-top: 48px;
       padding: 22px 28px;
@@ -455,7 +454,7 @@
 
     .cost-note strong { color: var(--gold); font-weight: 600; }
 
-    /* ─── CONTACT ─── */
+    /* CONTACT */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1.6fr;
@@ -468,11 +467,7 @@
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
-    .contact-info h3 {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
+    .contact-info h3 { font-size: 1.5rem; margin-bottom: 16px; line-height: 1.3; }
 
     .contact-info p {
       font-size: 0.92rem;
@@ -481,11 +476,7 @@
       line-height: 1.8;
     }
 
-    .contact-detail {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    .contact-detail { display: flex; flex-direction: column; gap: 16px; }
 
     .contact-detail-item {
       display: flex;
@@ -507,24 +498,21 @@
       flex-shrink: 0;
     }
 
-    /* FORM */
+    /* FORM CONTAINER */
+    .form-container {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 40px;
+    }
+
     form { display: flex; flex-direction: column; gap: 18px; }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
-    @media (max-width: 480px) {
-      .form-row { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
 
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .field { display: flex; flex-direction: column; gap: 8px; }
 
     .field label {
       font-size: 0.75rem;
@@ -537,7 +525,7 @@
     .field input,
     .field select,
     .field textarea {
-      background: var(--panel);
+      background: var(--black);
       border: 1px solid var(--border);
       color: var(--white);
       padding: 14px 16px;
@@ -551,27 +539,15 @@
 
     .field input:focus,
     .field select:focus,
-    .field textarea:focus {
-      border-color: var(--gold);
-    }
+    .field textarea:focus { border-color: var(--gold); }
 
     .field select option { background: var(--panel); }
-
     .field textarea { resize: vertical; min-height: 120px; }
 
-    .form-submit {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+    .form-submit { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .form-note { font-size: 0.8rem; color: #555; }
 
-    .form-note {
-      font-size: 0.8rem;
-      color: #555;
-    }
-
-    /* ─── FOOTER ─── */
+    /* FOOTER */
     .footer-bar {
       border-top: 1px solid var(--border);
       padding: 36px 60px;
@@ -582,6 +558,8 @@
       gap: 16px;
     }
 
+    .footer-logo-wrap { display: flex; flex-direction: column; gap: 2px; }
+
     .footer-bar .logo {
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
@@ -590,14 +568,19 @@
 
     .footer-bar .logo span { color: var(--gold); }
 
-    .footer-bar p {
-      font-size: 0.8rem;
+    .footer-bar .footer-sub {
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
       color: #444;
     }
+
+    .footer-bar p { font-size: 0.8rem; color: #444; }
 
     @media (max-width: 768px) {
       .section { padding: 70px 24px; }
       .hero { padding: 80px 24px; }
+      .hero-emblem { display: none; }
       .footer-bar { padding: 30px 24px; flex-direction: column; align-items: flex-start; }
       .hero-stats { gap: 36px; }
     }
@@ -605,9 +588,11 @@
 </head>
 <body>
 
-  <!-- ── NAV ── -->
+  <!-- NAV -->
   <nav>
-    <div class="nav-logo">Open<span>Claw</span> Consulting</div>
+    <div class="nav-logo-wrap">
+      <div class="nav-logo">Open<span>Claw</span> Consulting</div>
+    </div>
     <ul class="nav-links">
       <li><a href="#why">About</a></li>
       <li><a href="#packages">Packages</a></li>
@@ -615,16 +600,52 @@
     </ul>
   </nav>
 
-  <!-- ── HERO ── -->
+  <!-- HERO -->
   <section class="hero">
+
+    <!-- Geometric SVG emblem, top-right -->
+    <div class="hero-emblem">
+      <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer octagon -->
+        <polygon points="170,10 280,55 330,165 285,275 170,330 55,285 10,175 55,65"
+          stroke="#C9A84C" stroke-width="1" fill="none"/>
+        <!-- Middle octagon -->
+        <polygon points="170,40 255,75 300,160 257,245 170,280 83,245 40,160 83,75"
+          stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+        <!-- Inner octagon -->
+        <polygon points="170,80 230,105 255,165 230,225 170,250 108,225 83,165 108,105"
+          stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+        <!-- Cross lines -->
+        <line x1="170" y1="10" x2="170" y2="330" stroke="#C9A84C" stroke-width="0.4"/>
+        <line x1="10" y1="170" x2="330" y2="170" stroke="#C9A84C" stroke-width="0.4"/>
+        <line x1="55" y1="65" x2="285" y2="275" stroke="#C9A84C" stroke-width="0.3"/>
+        <line x1="285" y1="65" x2="55" y2="275" stroke="#C9A84C" stroke-width="0.3"/>
+        <!-- Center diamond -->
+        <polygon points="170,140 200,170 170,200 140,170"
+          stroke="#C9A84C" stroke-width="1" fill="none"/>
+        <!-- Center dot -->
+        <circle cx="170" cy="170" r="4" fill="#C9A84C" opacity="0.6"/>
+      </svg>
+    </div>
+
     <div class="hero-inner">
-      <div class="hero-eyebrow">AI Infrastructure Consulting</div>
+      <div class="hero-brand-block">
+        <div class="hero-brand-line"></div>
+        <div class="hero-brand-text">
+          <span class="hero-brand-main">Claw Consulting</span>
+          <span class="hero-brand-sub">AI Infrastructure Advisory</span>
+        </div>
+      </div>
+
       <h1>Your AI setup<br>should work as hard<br>as <em>you do.</em></h1>
-      <p class="hero-sub">We deploy, configure, and optimize personal AI infrastructure for individuals and businesses — with the expertise and judgment that only comes from doing this for over a decade.</p>
+
+      <p class="hero-sub">We deploy, configure, and optimize personal AI infrastructure for individuals and businesses, with the expertise and judgment that only comes from doing this for over a decade.</p>
+
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Schedule a Consultation</a>
         <span class="hero-secondary">Available worldwide &nbsp;·&nbsp; Remote &amp; in-person</span>
       </div>
+
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-num">10<span>+</span></div>
@@ -635,7 +656,7 @@
           <p>Tailored setup packages</p>
         </div>
         <div class="stat-item">
-          <div class="stat-num">∞</div>
+          <div class="stat-num">&#8734;</div>
           <p>Locations served worldwide</p>
         </div>
       </div>
@@ -644,10 +665,10 @@
 
   <hr class="section-divider">
 
-  <!-- ── WHY US ── -->
+  <!-- WHY US -->
   <div id="why">
     <div class="section">
-      <div class="section-label">Why OpenClaw</div>
+      <div class="section-label">Why Claw</div>
       <h2 style="font-size: clamp(1.8rem, 3vw, 2.6rem); max-width: 580px; margin-bottom: 0;">
         Two partners. A decade of real-world AI experience. Zero compromises.
       </h2>
@@ -656,7 +677,7 @@
         <div class="why-cell">
           <div class="icon">⚡</div>
           <h3>Optimized From Day One</h3>
-          <p>We don't hand you a manual and wish you luck. We configure your system end-to-end — tuned to your workflow, your team, and your goals.</p>
+          <p>We don't hand you a manual and wish you luck. We configure your system end-to-end, tuned to your workflow, your team, and your goals.</p>
         </div>
         <div class="why-cell">
           <div class="icon">🔐</div>
@@ -666,12 +687,12 @@
         <div class="why-cell">
           <div class="icon">🤖</div>
           <h3>Automation That Actually Works</h3>
-          <p>From simple task agents to full business workflow automation — we build AI tools that integrate seamlessly into how you already operate.</p>
+          <p>From simple task agents to full business workflow automation, we build AI tools that integrate seamlessly into how you already operate.</p>
         </div>
         <div class="why-cell">
           <div class="icon">🌍</div>
           <h3>Worldwide Reach</h3>
-          <p>Remote clients across every timezone, and in-person consultations available globally. We come to you — wherever you are.</p>
+          <p>Remote clients across every timezone, and in-person consultations available globally. We come to you, wherever you are.</p>
         </div>
       </div>
     </div>
@@ -679,7 +700,7 @@
 
   <hr class="section-divider">
 
-  <!-- ── PACKAGES ── -->
+  <!-- PACKAGES -->
   <div class="packages-bg" id="packages">
     <div class="section">
       <div class="section-label">Packages</div>
@@ -694,7 +715,7 @@
           <div class="pkg-label">Tier 01</div>
           <div class="pkg-name">Remote Setup</div>
           <ul class="pkg-features">
-            <li>Full remote OpenClaw installation &amp; configuration</li>
+            <li>Full remote OpenClaw installation and configuration</li>
             <li>Optimized system setup tailored to your workflow</li>
             <li>Step-by-step private key replacement instructions</li>
             <li>Setup documentation for your specific environment</li>
@@ -713,14 +734,14 @@
       <!-- TIER 2 -->
       <div class="package-row">
         <div>
-          <div class="pkg-label">Tier 02 &nbsp;—&nbsp; Most Requested</div>
+          <div class="pkg-label">Tier 02 &nbsp;·&nbsp; Most Requested</div>
           <div class="pkg-name">Premium Remote Setup</div>
           <ul class="pkg-features">
             <li>Everything in Remote Setup</li>
             <li>Upgraded Mac mini hardware included</li>
-            <li>Dedicated hours for custom app &amp; automation builds</li>
+            <li>Dedicated hours for custom app and automation builds</li>
             <li>Business workflow automation consulting</li>
-            <li>Priority support access &amp; extended follow-up period</li>
+            <li>Priority support access and extended follow-up period</li>
           </ul>
         </div>
         <div class="pkg-price-col">
@@ -740,10 +761,10 @@
           <ul class="pkg-features">
             <li>Everything in Premium Remote Setup</li>
             <li>On-site hands-on installation at your location</li>
-            <li>Full-day strategy &amp; planning session</li>
-            <li>In-person team training &amp; knowledge transfer</li>
+            <li>Full-day strategy and planning session</li>
+            <li>In-person team training and knowledge transfer</li>
             <li>Custom infrastructure architecture planning</li>
-            <li>Price varies by location — contact us for a quote</li>
+            <li>Price varies by location, contact us for a quote</li>
           </ul>
         </div>
         <div class="pkg-price-col">
@@ -757,14 +778,14 @@
 
       <!-- AI COST NOTE -->
       <div class="cost-note">
-        <strong>Note on AI provider costs:</strong> OpenClaw connects to third-party AI providers and those costs are billed separately by the provider. Pricing varies widely based on usage and model selection. We currently operate on <strong>Claude Opus 4</strong>, which typically runs <strong>$100–$200/month</strong> depending on usage volume. We'll help you understand and manage these costs as part of every setup.
+        <strong>Note on AI provider costs:</strong> OpenClaw connects to third-party AI providers and those costs are billed separately by the provider. Pricing varies widely based on usage and model selection. We currently operate on <strong>Claude Opus 4.6</strong>, which typically runs <strong>$100–$200/month</strong> depending on usage volume. We'll help you understand and manage these costs as part of every setup.
       </div>
     </div>
   </div>
 
   <hr class="section-divider">
 
-  <!-- ── CONTACT ── -->
+  <!-- CONTACT -->
   <div id="contact">
     <div class="section">
       <div class="section-label">Contact</div>
@@ -780,7 +801,7 @@
             </div>
             <div class="contact-detail-item">
               <div class="icon">🌍</div>
-              <span>Available worldwide — remote &amp; in-person</span>
+              <span>Available worldwide, remote and in-person</span>
             </div>
             <div class="contact-detail-item">
               <div class="icon">⏱</div>
@@ -789,48 +810,52 @@
           </div>
         </div>
 
-        <form action="mailto:hello@openclaw.ai" method="GET" enctype="text/plain">
-          <div class="form-row">
-            <div class="field">
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" name="First Name" placeholder="Jane" required />
+        <div class="form-container">
+          <form action="mailto:hello@openclaw.ai" method="GET" enctype="text/plain">
+            <div class="form-row">
+              <div class="field">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="First Name" placeholder="Jane" required />
+              </div>
+              <div class="field">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="Last Name" placeholder="Smith" required />
+              </div>
             </div>
             <div class="field">
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="Last Name" placeholder="Smith" required />
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="Email" placeholder="you@company.com" required />
             </div>
-          </div>
-          <div class="field">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="Email" placeholder="you@company.com" required />
-          </div>
-          <div class="field">
-            <label for="package">Package Interest</label>
-            <select id="package" name="Package">
-              <option value="" disabled selected>Select a package</option>
-              <option>Remote Setup — $2,000</option>
-              <option>Premium Remote Setup — $5,000</option>
-              <option>In-Person Setup — $10,000+</option>
-              <option>Not sure yet — just exploring</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="message">Tell us about your setup</label>
-            <textarea id="message" name="Message" placeholder="What are you trying to build or automate? Any existing infrastructure we should know about?"></textarea>
-          </div>
-          <div class="form-submit">
-            <button type="submit" class="btn-primary" style="cursor:pointer; border:none;">Send Message</button>
-            <span class="form-note">No spam. No pressure. Just a real conversation.</span>
-          </div>
-        </form>
+            <div class="field">
+              <label for="package">Package Interest</label>
+              <select id="package" name="Package">
+                <option value="" disabled selected>Select a package</option>
+                <option>Remote Setup — $2,000</option>
+                <option>Premium Remote Setup — $5,000</option>
+                <option>In-Person Setup — $10,000+</option>
+                <option>Not sure yet, just exploring</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Tell us about your setup</label>
+              <textarea id="message" name="Message" placeholder="What are you trying to build or automate? Any existing infrastructure we should know about?"></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn-primary" style="cursor:pointer; border:none;">Send Message</button>
+              <span class="form-note">No spam. No pressure. Just a real conversation.</span>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ── FOOTER ── -->
+  <!-- FOOTER -->
   <div class="footer-bar">
-    <div class="logo">Open<span>Claw</span> Consulting</div>
-    <p>© 2025 OpenClaw Consulting · All rights reserved</p>
+    <div class="footer-logo-wrap">
+      <div class="logo">Open<span>Claw</span> Consulting</div>
+    </div>
+    <p>© 2026 Claw Consulting · All rights reserved</p>
   </div>
 
 </body>
