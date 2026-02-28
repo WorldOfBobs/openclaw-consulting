@@ -492,6 +492,13 @@
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 0; max-width: 780px; }
+    .faq-item { border-top: 1px solid var(--border); padding: 28px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--white); margin-bottom: 12px; line-height: 1.4; }
+    .faq-a { font-size: 0.95rem; color: var(--gray); line-height: 1.75; }
+
     .contact-info h3 { font-size: 1.5rem; margin-bottom: 16px; line-height: 1.3; }
 
     .contact-info p {
@@ -621,6 +628,7 @@
     <ul class="nav-links">
       <li><a href="#why">About</a></li>
       <li><a href="#packages">Packages</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Contact Us</a></li>
     </ul>
   </nav>
@@ -808,6 +816,55 @@
       <!-- AI COST NOTE -->
       <div class="cost-note">
         <strong>Note on AI provider costs:</strong> Your AI assistant (including OpenClaw) connects to third-party AI providers and those costs are billed separately by the provider. Pricing varies widely based on usage and model selection. We currently operate on <strong>Claude Opus 4.6</strong>, which typically runs <strong>$100 to $200 per month</strong> depending on usage volume. We'll help you understand and manage these costs as part of every setup.
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- FAQ -->
+  <div id="faq">
+    <div class="section">
+      <div class="section-label">FAQ</div>
+      <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); max-width: 560px; margin-bottom: 48px;">Common questions about OpenClaw setup and what to expect.</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q">What exactly is OpenClaw and why do I need help installing it?</div>
+          <div class="faq-a">OpenClaw is a self-hosted AI assistant platform that runs on your own hardware and connects to AI providers like Claude. While the software is powerful, configuring it correctly — keys, routing, integrations, security hardening — takes time and expertise. We handle all of that so you start productive on day one instead of troubleshooting for weeks.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How long does an OpenClaw installation take?</div>
+          <div class="faq-a">A standard remote setup takes 1 to 3 business days from first contact to go-live. In-person engagements are typically completed within a single day on-site. We'll give you a specific timeline before we start.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What hardware do I need for OpenClaw?</div>
+          <div class="faq-a">Hardware requirements depend on your use case. A Mac mini is a popular choice for home and small business deployments because of its efficiency, reliability, and macOS compatibility. We will advise on the right specs for your workload during the intake process. Hardware is not included in our packages and is purchased separately.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Do I need any technical background to use OpenClaw after setup?</div>
+          <div class="faq-a">No. Our setup packages include documentation and a walkthrough so you can use OpenClaw confidently without any technical background. The Premium and In-Person tiers include extended support time specifically for this.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What are the ongoing costs after setup?</div>
+          <div class="faq-a">Our fee is one-time. After setup, your only recurring costs are AI provider charges (typically $100 to $200 per month depending on usage and model) and any hardware or hosting costs you choose. There are no subscriptions or retainer fees unless you opt into additional support.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Can you set up OpenClaw for a team or business?</div>
+          <div class="faq-a">Yes. Our Premium Remote and In-Person packages are designed for business deployments and include automation consulting and workflow integration. Contact us to discuss your team size and use case.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Do you offer support after the setup is complete?</div>
+          <div class="faq-a">All packages include a follow-up support window after go-live. The Remote Setup includes 48 hours of follow-up. Premium and In-Person packages include an extended period. We can discuss ongoing support arrangements for larger deployments.</div>
+        </div>
+
       </div>
     </div>
   </div>
